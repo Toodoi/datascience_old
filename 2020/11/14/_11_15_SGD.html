@@ -540,7 +540,7 @@ This notebook illustrates the process of SGD by using it to train an image class
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The graph below shows the distribution of the prediction outputs for each class value. We can see that our arbitrary threshold of 0 in fact does a very poor job of predicting the class values because there is a healthy mix of both <strong>3</strong>s and <strong>7</strong>s on either end of 0. These two nicely distributions are to be expected from intialising the weights using a normal distribution.</p>
+<p>The graph below shows the distribution of the prediction values for each class value. We can see that our arbitrary threshold of 0 in fact does a very poor job of predicting the class values because there is a healthy mix of both <strong>3</strong>s and <strong>7</strong>s on either end of 0. These two lovely shaped distributions are to be expected from intialising the weights randomly using the standard normal distribution.</p>
 
 </div>
 </div>
@@ -597,7 +597,7 @@ This notebook illustrates the process of SGD by using it to train an image class
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Define-a-loss-function">Define a <em>loss function</em><a class="anchor-link" href="#Define-a-loss-function"> </a></h3><p>The loss function is a means of assessing the the current weight assignments in terms of actual performance.</p>
-<p>This loss function takes the outputs from the <code>linear1</code> model as inputs and compares them to the targets. It measures the distance of each prediction from its target label (i.e. 1 for <strong>3</strong>s and 0 for <strong>7</strong>s) for a batch of predictions and targets and returns an average of these distances. It is our goal to minimise this function by changing the values of the weights. A score of 0 would mean that for some combination of weights applied to a batch of inputs, the model produced outputs that corresponded exactly to the batch's target labels.</p>
+<p>This loss function takes the outputs from the <code>linear1</code> model as inputs and compares them to the targets. It measures the distance of each prediction from its target label (i.e. 1 for <strong>3</strong>s and 0 for <strong>7</strong>s) for a given batch containing prediction values and target labels and returns an average of these distances. It is our goal to minimise this function by changing the values of the weights. A score of 0 would mean that for some combination of weights applied to a batch of inputs, the model produced outputs that corresponded exactly to the batch's target labels.</p>
 <p>One problem with <code>mnist_loss</code> as currently defined is that it assumes that prediction values are always between 0 and 1 (the above graph shows they are actually ranging from around -20 to 20). The sigmoid method in the loss function transforms the prediction values into values that fall in the domain of 0 to 1 to allow our loss function to work.</p>
 <p><img src="https://drive.google.com/uc?id=1XIjbvnIOU_qfp7tBzXB-w-UsPL8c5ccE" alt="picture" /></p>
 
